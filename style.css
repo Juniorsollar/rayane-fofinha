@@ -133,10 +133,16 @@ body {
   box-shadow: 0 20px 45px var(--shadow-deep), 0 8px 18px var(--shadow-soft);
   transform-style: preserve-3d;
   transition: transform 0.6s var(--ease-smooth);
+  cursor: pointer;
 }
 
 .envelope:hover {
   transform: translateY(-3px);
+}
+
+.envelope-wrapper.open .envelope,
+.envelope.open {
+  cursor: default;
 }
 
 /* ==========================================================================
@@ -155,6 +161,8 @@ body {
   z-index: 5;
   border-radius: 18px 18px 0 0;
   filter: drop-shadow(0 4px 8px rgba(190, 40, 70, 0.14));
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
 }
 
 /* Estado Aberto da Aba */
@@ -249,6 +257,8 @@ body {
   border-radius: 8px;
   display: block;
   transition: transform 0.5s ease;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .letter-card:hover .couple-photo {
@@ -514,6 +524,29 @@ body {
   .hint-text {
     font-size: 0.85rem;
     bottom: -40px;
+  }
+}
+
+/* Telas Muito Pequenas (≤ 360px) */
+@media (max-width: 360px) {
+  .envelope {
+    width: 270px;
+    height: 190px;
+  }
+
+  .letter-card {
+    width: 240px;
+    padding: 10px 10px 12px 10px;
+  }
+
+  .envelope-wrapper.open .letter-card,
+  .envelope.open .letter-card,
+  .letter-card.open {
+    transform: translateX(-50%) translateY(-115px) scale(1.01);
+  }
+
+  .love-text {
+    font-size: 1.65rem;
   }
 }
 
