@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Uma cartinha de amor interativa e especial para Rayane ❤️">
+  <title>Para Rayane com amor ❤️</title>
+
+  <!-- Google Fonts: Great Vibes & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Estilos da Cartinha -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Script de Interatividade e Canvas -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Canvas de partículas de corações flutuantes no fundo -->
+  <canvas id="hearts-canvas" aria-hidden="true"></canvas>
+
+  <!-- Container principal da aplicação -->
+  <main class="main-container">
+    <div class="envelope-wrapper" id="envelopeWrapper">
+      <div class="envelope" id="envelope">
+        <!-- Aba articulada superior do envelope -->
+        <div class="flap"></div>
+
+        <!-- Cartinha interior que desliza e se revela -->
+        <div class="letter-card" id="letterCard" role="dialog" aria-label="Cartinha de amor">
+          <div class="photo-frame photo-container">
+            <img src="eu e ray.jpg" alt="Eu e Rayane" id="couple-photo" class="couple-photo">
+          </div>
+          
+          <div class="heart-badge">
+            <span class="heart-icon" aria-hidden="true">❤️</span>
+            <span class="love-text">Eu te amo</span>
+          </div>
+
+          <button type="button" class="close-btn" id="closeBtn" aria-label="Guardar cartinha">
+            Guardar cartinha 💌
+          </button>
+        </div>
+
+        <!-- Bolso frontal do envelope que recobre a cartinha -->
+        <div class="envelope-pocket"></div>
+
+        <!-- Selo de cera / botão de abertura do envelope -->
+        <button type="button" class="seal-btn" id="sealBtn" aria-label="Toque no selo para abrir a cartinha">
+          <span class="seal-heart" aria-hidden="true">💖</span>
+        </button>
+
+        <!-- Texto instrutivo -->
+        <p class="hint-text" id="hintText">Toque no selo para abrir ✨</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
